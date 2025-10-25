@@ -499,3 +499,160 @@ function initDynamicColors() {
 document.addEventListener('DOMContentLoaded', function() {
     initDynamicColors();
 });
+
+// Enhanced Dynamic Effects for All Sections
+function initAllSectionsDynamic() {
+    const sections = document.querySelectorAll('section');
+    
+    // Add floating elements to each section
+    sections.forEach((section, index) => {
+        if (section.id !== 'home') { // Skip hero section as it already has effects
+            createFloatingElements(section, index);
+        }
+    });
+    
+    // Enhanced scroll animations for all sections
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible) {
+                // Parallax effect for section backgrounds
+                const rate = scrolled * -0.1;
+                section.style.transform = `translateY(${rate}px)`;
+                
+                // Dynamic opacity based on scroll position
+                const opacity = Math.max(0.3, 1 - Math.abs(rect.top) / window.innerHeight);
+                section.style.opacity = opacity;
+            }
+        });
+    });
+}
+
+// Create floating elements for each section
+function createFloatingElements(section, sectionIndex) {
+    const colors = [
+        'rgba(102, 126, 234, 0.1)',
+        'rgba(118, 75, 162, 0.1)',
+        'rgba(75, 192, 192, 0.1)',
+        'rgba(255, 107, 107, 0.1)',
+        'rgba(255, 193, 7, 0.1)'
+    ];
+    
+    for (let i = 0; i < 3; i++) {
+        const element = document.createElement('div');
+        element.className = 'floating-element';
+        element.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 80 + 40}px;
+            height: ${Math.random() * 80 + 40}px;
+            background: ${colors[sectionIndex % colors.length]};
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            top: ${Math.random() * 80 + 10}%;
+            left: ${Math.random() * 80 + 10}%;
+            animation: float ${Math.random() * 10 + 5}s ease-in-out infinite;
+            animation-delay: ${Math.random() * 5}s;
+            z-index: 1;
+            pointer-events: none;
+        `;
+        
+        section.appendChild(element);
+    }
+}
+
+// Dynamic color cycling for all sections
+function initSectionColorCycling() {
+    const sections = document.querySelectorAll('section');
+    const colorSchemes = [
+        {
+            primary: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            secondary: 'rgba(102, 126, 234, 0.1)'
+        },
+        {
+            primary: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+            secondary: 'rgba(240, 147, 251, 0.1)'
+        },
+        {
+            primary: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+            secondary: 'rgba(79, 172, 254, 0.1)'
+        },
+        {
+            primary: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+            secondary: 'rgba(67, 233, 123, 0.1)'
+        },
+        {
+            primary: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+            secondary: 'rgba(250, 112, 154, 0.1)'
+        }
+    ];
+    
+    let currentScheme = 0;
+    
+    setInterval(() => {
+        sections.forEach((section, index) => {
+            if (section.id === 'home') {
+                section.style.background = colorSchemes[currentScheme].primary;
+            } else {
+                // Update section background with subtle color
+                section.style.background = `linear-gradient(135deg, ${colorSchemes[currentScheme].secondary} 0%, transparent 100%)`;
+            }
+        });
+        
+        currentScheme = (currentScheme + 1) % colorSchemes.length;
+    }, 8000); // Change every 8 seconds
+}
+
+// Enhanced mouse interaction for all sections
+function initSectionMouseInteraction() {
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(section => {
+        section.addEventListener('mousemove', function(e) {
+            const rect = section.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const moveX = (x - centerX) / centerX;
+            const moveY = (y - centerY) / centerY;
+            
+            // Move floating elements based on mouse position
+            const floatingElements = section.querySelectorAll('.floating-element');
+            floatingElements.forEach((element, index) => {
+                const speed = (index + 1) * 0.5;
+                element.style.transform = `translate(${moveX * speed * 20}px, ${moveY * speed * 20}px)`;
+            });
+        });
+        
+        section.addEventListener('mouseleave', function() {
+            const floatingElements = section.querySelectorAll('.floating-element');
+            floatingElements.forEach(element => {
+                element.style.transform = 'translate(0, 0)';
+            });
+        });
+    });
+}
+
+// Initialize all dynamic effects
+document.addEventListener('DOMContentLoaded', function() {
+    initAllSectionsDynamic();
+    initSectionColorCycling();
+    initSectionMouseInteraction();
+});
+
+// Add CSS for floating elements animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+    }
+`;
+document.head.appendChild(style);
