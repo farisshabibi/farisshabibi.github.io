@@ -983,3 +983,24 @@ section {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
 }
+
+/* Bigger name font */
+.main-name {
+    font-size: 4.5rem !important;
+    font-weight: 800 !important;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments for bigger name */
+@media (max-width: 768px) {
+    .main-name {
+        font-size: 3rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-name {
+        font-size: 2.5rem !important;
+    }
+}

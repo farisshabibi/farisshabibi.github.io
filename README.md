@@ -7,14 +7,14 @@ A modern, responsive portfolio website showcasing DevOps engineering skills and 
 **Faris Shabibi** - DevOps Engineer with 4 years of experience in AWS, Kubernetes, and automation. Specialized in building CI/CD pipelines, infrastructure as code, and containerized deployments.
 
 **Current Title:** DevOps Engineer  
-**Specialization:** DevOps | SRE | Cloud | AWS | Terraform | Kubernetes | Docker
+**Specialization:** DevOps | SRE | Cloud | AWS | Docker | Kubernetes
 
 ## Contact Information
 
 - **Email:** farisshabibi@gmail.com
 - **Phone:** +91 7709025167
-- **LinkedIn:** [linkedin.com/in/farisshabibi](https://linkedin.com/in/farisshabibi)
-- **GitHub:** [github.com/farisshabibi](https://github.com/farisshabibi)
+- **LinkedIn:** [linkedin.com/in/faris-shabibi-971ab521b](https://linkedin.com/in/faris-shabibi-971ab521b)
+- **Location:** Pune. Available to work in Pune, Hyderabad, Bangalore
 
 ## Features
 
@@ -120,7 +120,7 @@ A modern, responsive portfolio website showcasing DevOps engineering skills and 
 ### Personal Information
 Update the following sections in `index.html`:
 - Hero section title and subtitle
-- Contact information (email, LinkedIn, GitHub)
+- Contact information (email, LinkedIn)
 - Professional experience details
 - Project descriptions and technologies
 - Certifications and education
