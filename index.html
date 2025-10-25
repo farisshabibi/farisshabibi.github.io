@@ -3,48 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faris Shabibi — Platform Engineer</title>
+  <title>Faris Shabibi — DevOps & Cloud Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg1: #02112b;
-      --bg2: #063a7a;
-      --accent: #20c0ff;
-      --card: rgba(255,255,255,0.06);
-      --shadow: 0 10px 30px rgba(3,10,34,0.6);
+    :root{
+      --bg1:#02112b;
+      --bg2:#063a7a;
+      --accent:#20c0ff;
+      --card:rgba(255,255,255,0.06);
+      --shadow:0 10px 30px rgba(3,10,34,0.6);
     }
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{
-      font-family:'Inter',sans-serif;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(32,192,255,0.06), transparent),
-                  linear-gradient(160deg, var(--bg1), var(--bg2));
-      color:#e6eef8;
-      line-height:1.5;
-      padding:32px;
-    }
+    body{font-family:'Inter',sans-serif;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:#e6eef8;line-height:1.5;}
     a{text-decoration:none;color:inherit;}
-    .wrap{max-width:1100px;margin:0 auto;display:grid;gap:48px;}
-    
+    .wrap{max-width:1100px;margin:0 auto;padding:32px;display:grid;gap:48px;}
+
     /* HERO */
-    .hero{
-      display:flex;flex-direction:column;align-items:flex-start;
-      padding:32px;border-radius:16px;
-      background: linear-gradient(180deg,var(--card),rgba(255,255,255,0.01));
-      box-shadow: var(--shadow);
-      position:relative;overflow:hidden;
-    }
-    .hero::before,.hero::after{
-      content:"";position:absolute;border-radius:50%;filter: blur(40px);opacity:0.5;
-    }
-    .hero::before{
-      width:300px;height:300px;background:linear-gradient(135deg, rgba(32,192,255,0.12), rgba(6,58,122,0.12));
-      top:-100px;right:-120px;
-    }
-    .hero::after{
-      width:180px;height:180px;background:linear-gradient(135deg, rgba(32,192,255,0.06), rgba(6,58,122,0.06));
-      bottom:-60px;left:-60px;
-    }
-    .hero .name{font-size:36px;font-weight:700;color:var(--accent);}
+    .hero{position:relative;padding:48px;border-radius:16px;background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.01));box-shadow:var(--shadow);overflow:hidden;}
+    .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(40px);opacity:0.5;}
+    .hero::before{width:300px;height:300px;background:linear-gradient(135deg, rgba(32,192,255,0.12), rgba(6,58,122,0.12));top:-100px;right:-120px;}
+    .hero::after{width:180px;height:180px;background:linear-gradient(135deg, rgba(32,192,255,0.06), rgba(6,58,122,0.06));bottom:-60px;left:-60px;}
+    .hero .name{font-size:40px;font-weight:700;color:var(--accent);}
     .hero .role{margin-top:6px;font-size:16px;font-weight:600;color:#cfeeff;}
     .hero .summary{margin-top:16px;font-size:16px;color:#d7eaf9;max-width:70ch;}
     .type-wrap{margin-top:16px;font-size:16px;font-weight:600;color:#eafcff;display:flex;gap:10px;align-items:center;}
@@ -54,31 +33,33 @@
     .contact a.email:hover{transform:translateY(-3px);box-shadow:0 8px 16px rgba(32,192,255,0.2);}
     .contact a.link{color:#dff6ff;font-weight:600;transition:0.3s;}
     .contact a.link:hover{color:var(--accent);}
-    
+
+    /* SECTIONS */
+    section{display:flex;flex-direction:column;gap:16px;}
+    h3{color:var(--accent);font-size:20px;font-weight:700;margin-bottom:12px;}
+
     /* PROJECTS */
-    .projects-section{display:flex;flex-direction:column;gap:16px;}
-    .projects-section h3{color:var(--accent);font-size:18px;font-weight:700;margin-bottom:12px;}
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:12px;}
-    .project{padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);box-shadow:0 8px 20px rgba(2,8,30,0.55);transition:0.3s;cursor:default;}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+    .project{padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);box-shadow:0 8px 20px rgba(2,8,30,0.55);transition:0.3s;cursor:default;display:flex;flex-direction:column;gap:12px;}
     .project:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,8,30,0.6);}
-    .project h4{font-size:16px;margin-bottom:8px;color:#e9fbff;}
+    .project h4{font-size:16px;color:#e9fbff;}
     .project p{font-size:14px;color:#cfeeff;opacity:0.95;}
-    
+    .project svg{width:24px;height:24px;fill:var(--accent);}
+
     /* SKILLS */
-    .skills-section{display:flex;flex-direction:column;gap:16px;}
-    .skills-section h3{color:var(--accent);font-size:18px;font-weight:700;margin-bottom:12px;}
-    .skill{margin-bottom:16px;}
+    .skills .skill{margin-bottom:18px;}
     .skill .meta-line{display:flex;justify-content:space-between;font-size:14px;color:#d6eefc;margin-bottom:6px;}
     .bar{height:14px;background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);}
     .fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg, rgba(0,175,255,0.95), rgba(32,192,255,0.95));box-shadow:0 6px 18px rgba(2,112,170,0.18) inset;transition:width 1.8s cubic-bezier(.22,.9,.32,1);}
     .skill-tags{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;}
-    .tag{font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);color:#cfeeff;transition:0.2s;}
+    .tag{font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);color:#cfeeff;transition:0.2s;position:relative;}
     .tag:hover{background:var(--accent);color:#02112b;cursor:default;}
+    .tag:hover::after{content: attr(data-info);position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.8);color:#fff;padding:6px 10px;border-radius:6px;font-size:12px;white-space:nowrap;pointer-events:none;}
 
-    /* Footer */
+    /* FOOTER */
     .foot{text-align:center;color:#cfeeff;opacity:0.7;font-size:13px;padding:20px 0;margin-top:48px;}
 
-    /* Responsive */
+    /* RESPONSIVE */
     @media(max-width:880px){.hero{align-items:flex-start}}
   </style>
 </head>
@@ -87,8 +68,8 @@
     <!-- HERO -->
     <header class="hero">
       <div class="name">Faris Shabibi</div>
-      <div class="role">Platform engineer - Cloud & DevOps</div>
-      <div class="summary">I build reliable, automated, and cost-efficient cloud platforms for production workloads. Focused on infra-as-code, container orchestration, CI/CD, observability, and scalable data systems.</div>
+      <div class="role">Platform Engineer — DevOps & Cloud</div>
+      <div class="summary">DevOps Engineer with 4 years of experience in AWS, Kubernetes, and automation. Specialized in CI/CD pipelines, containerized deployments, and production-scale observability.</div>
       <div class="type-wrap">Primary: <div class="type" id="type"></div></div>
       <div class="contact">
         <a href="mailto:farisshabibi@gmail.com" class="email">✉️ Email</a>
@@ -101,14 +82,17 @@
       <h3>Production Projects</h3>
       <div class="projects">
         <div class="project" tabindex="0">
+          <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm4 0h14v-2H7v2zM3 17h2v-2H3v2zm4 0h14v-2H7v2zM3 9h2V7H3v2zm4 0h14V7H7v2z"/></svg>
           <h4>CI/CD Pipeline on AWS</h4>
           <p>Terraform + GitLab CI to provision EKS, EMR, RDS with automated testing and secret management.</p>
         </div>
         <div class="project" tabindex="0">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 17h-2v-6h2v6zm0-8h-2V7h2v4z"/></svg>
           <h4>Trino on EKS</h4>
           <p>Kerberos-secured Trino cluster integrated with Superset dashboards for BI workflows.</p>
         </div>
         <div class="project" tabindex="0">
+          <svg viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm-1-5h2v2h-2v-2zm0-10h2v8h-2V7z"/></svg>
           <h4>Monitoring & Alerts</h4>
           <p>Prometheus, Grafana, Datadog & CloudWatch unified stack with custom alerts and dashboards.</p>
         </div>
@@ -116,29 +100,43 @@
     </section>
 
     <!-- SKILLS -->
-    <section class="skills-section">
+    <section class="skills-section skills">
       <h3>Skills & Tooling</h3>
 
       <div class="skill" data-fill="95">
         <div class="meta-line"><span>Cloud & Infrastructure — AWS</span><span>95%</span></div>
         <div class="bar"><div class="fill"></div></div>
-        <div class="skill-tags"><span class="tag">EC2</span><span class="tag">S3</span><span class="tag">EKS</span></div>
+        <div class="skill-tags">
+          <span class="tag" data-info="EC2, S3, EKS, ECS, EMR, RDS, VPC, IAM, Lambda, CloudWatch, SES, SNS, MWAA">AWS</span>
+          <span class="tag" data-info="Virtual Networks, Subnets, VPC Peering">Networking</span>
+        </div>
       </div>
+
       <div class="skill" data-fill="90">
         <div class="meta-line"><span>DevOps & CI/CD</span><span>90%</span></div>
         <div class="bar"><div class="fill"></div></div>
-        <div class="skill-tags"><span class="tag">GitLab CI</span><span class="tag">Jenkins</span><span class="tag">Terraform</span></div>
+        <div class="skill-tags">
+          <span class="tag" data-info="GitLab CI/CD Pipelines, Jenkins, ArgoCD">CI/CD</span>
+          <span class="tag" data-info="Terraform, Ansible">IaC</span>
+        </div>
       </div>
+
       <div class="skill" data-fill="92">
         <div class="meta-line"><span>Containers & Orchestration</span><span>92%</span></div>
         <div class="bar"><div class="fill"></div></div>
-        <div class="skill-tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span></div>
+        <div class="skill-tags">
+          <span class="tag" data-info="Docker, Docker Swarm, Kubernetes (EKS)">Containers</span>
+        </div>
       </div>
+
       <div class="skill" data-fill="88">
         <div class="meta-line"><span>Monitoring & Observability</span><span>88%</span></div>
         <div class="bar"><div class="fill"></div></div>
-        <div class="skill-tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span></div>
+        <div class="skill-tags">
+          <span class="tag" data-info="Prometheus, Grafana, Datadog, CloudWatch">Monitoring</span>
+        </div>
       </div>
+
     </section>
 
     <div class="foot">© <span id="year"></span> Faris Shabibi — Platform Engineer</div>
