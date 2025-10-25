@@ -1107,3 +1107,167 @@ section {
         font-size: 0.9rem;
     }
 }
+
+/* Dynamic Moving Background */
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+    animation: backgroundMove 20s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes backgroundMove {
+    0%, 100% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translateX(-20px) translateY(-10px) rotate(1deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(20px) translateY(-20px) rotate(-1deg);
+        opacity: 0.6;
+    }
+    75% {
+        transform: translateX(-10px) translateY(10px) rotate(0.5deg);
+        opacity: 0.9;
+    }
+}
+
+/* Transparent Text Effect */
+.hero-title .title-line {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.9) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    0% {
+        filter: brightness(1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+    }
+    100% {
+        filter: brightness(1.2) drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+    }
+}
+
+/* Enhanced Floating Shapes */
+.shape {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.shape-1 {
+    animation: float 6s ease-in-out infinite, rotate 20s linear infinite;
+}
+
+.shape-2 {
+    animation: float 8s ease-in-out infinite reverse, rotate 25s linear infinite reverse;
+}
+
+.shape-3 {
+    animation: float 7s ease-in-out infinite, rotate 15s linear infinite;
+}
+
+.shape-4 {
+    animation: float 9s ease-in-out infinite reverse, rotate 30s linear infinite;
+}
+
+.shape-5 {
+    animation: float 5s ease-in-out infinite, rotate 18s linear infinite reverse;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Enhanced Parallax Effect */
+.shape-1 {
+    animation-delay: 0s;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.shape-2 {
+    animation-delay: 2s;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+}
+
+.shape-3 {
+    animation-delay: 4s;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+}
+
+.shape-4 {
+    animation-delay: 1s;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
+}
+
+.shape-5 {
+    animation-delay: 3s;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.05));
+}
+
+/* Additional Background Layers */
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(255, 255, 255, 0.03) 50%, transparent 70%);
+    animation: shimmer 15s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        transform: translateX(-100%) translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(100%) translateY(100%);
+        opacity: 1;
+    }
+}
+
+/* Enhanced Profile Card */
+.profile-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive adjustments for new effects */
+@media (max-width: 768px) {
+    .hero-background::before {
+        animation-duration: 15s;
+    }
+    
+    .hero-background::after {
+        animation-duration: 12s;
+    }
+    
+    .shape {
+        animation-duration: 4s;
+    }
+}

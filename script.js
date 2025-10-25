@@ -433,3 +433,69 @@ revealStyle.textContent = `
     }
 `;
 document.head.appendChild(revealStyle);
+
+// Enhanced Parallax Effects
+function initEnhancedParallax() {
+    const shapes = document.querySelectorAll('.shape');
+    const heroBackground = document.querySelector('.hero-background');
+    
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.3;
+        
+        shapes.forEach((shape, index) => {
+            const speed = 0.3 + (index * 0.1);
+            const rotation = scrolled * 0.05;
+            shape.style.transform = `translateY(${rate * speed}px) rotate(${rotation}deg) scale(${1 + Math.sin(scrolled * 0.01) * 0.1})`;
+        });
+        
+        // Enhanced background movement
+        if (heroBackground) {
+            heroBackground.style.transform = `translateY(${scrolled * 0.1}px)`;
+        }
+    });
+    
+    // Mouse movement parallax
+    document.addEventListener('mousemove', function(e) {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        shapes.forEach((shape, index) => {
+            const speed = (index + 1) * 0.5;
+            const x = (mouseX - 0.5) * speed;
+            const y = (mouseY - 0.5) * speed;
+            shape.style.transform += ` translate(${x}px, ${y}px)`;
+        });
+    });
+}
+
+// Initialize enhanced parallax
+document.addEventListener('DOMContentLoaded', function() {
+    initEnhancedParallax();
+});
+
+// Add dynamic color changes
+function initDynamicColors() {
+    const hero = document.querySelector('.hero');
+    const colors = [
+        'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+        'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+    ];
+    
+    let colorIndex = 0;
+    
+    setInterval(() => {
+        if (hero) {
+            hero.style.background = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+    }, 10000); // Change every 10 seconds
+}
+
+// Initialize dynamic colors
+document.addEventListener('DOMContentLoaded', function() {
+    initDynamicColors();
+});
