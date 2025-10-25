@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Welcome to My GitHub Page!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faris Shabibi | DevOps Engineer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+      color: #f1f5f9;
+      font-family: 'Poppins', sans-serif;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
-<body>
-  <h1>Hello, World!</h1>
-  <p>This is my personal website, hosted with GitHub Pages.</p>
+<body class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+
+  <!-- Title Section -->
+  <section data-aos="fade-down" class="text-center mb-12">
+    <h1 class="text-5xl font-bold text-cyan-400 mb-3">Faris Shabibi</h1>
+    <p class="text-lg text-gray-300">DevOps | SRE | AWS | Kubernetes | Terraform</p>
+  </section>
+
+  <!-- Current Position -->
+  <section data-aos="fade-up" class="card p-6 w-full max-w-3xl mb-10 text-center">
+    <h2 class="text-2xl font-semibold text-cyan-300 mb-3">💼 Current Position</h2>
+    <p class="text-gray-200 leading-relaxed">
+      Associate DevOps Engineer at XYZ Company.  
+      Experienced in managing Kubernetes, AWS, CI/CD, and automation workflows.
+    </p>
+  </section>
+
+  <!-- Projects Completed -->
+  <section data-aos="fade-right" class="card p-6 w-full max-w-3xl mb-10">
+    <h2 class="text-2xl font-semibold text-cyan-300 mb-4 text-center">🚀 Projects in Production</h2>
+    <ul class="list-disc list-inside text-gray-200 space-y-2">
+      <li>Deployed Airflow on EKS using Terraform, GitLab CI/CD & ArgoCD</li>
+      <li>Automated EMR Cluster provisioning and monitoring using Shell & AWS SDK</li>
+      <li>Implemented centralized Prometheus-Grafana monitoring setup across environments</li>
+      <li>Created GitLab CI/CD pipeline for multi-environment application deployment</li>
+    </ul>
+  </section>
+
+  <!-- Skill Set -->
+  <section data-aos="fade-left" class="card p-6 w-full max-w-3xl">
+    <h2 class="text-2xl font-semibold text-cyan-300 mb-4 text-center">🧠 Skill Set</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-200">
+      <div class="p-2">AWS (EC2, S3, EKS, EMR, CloudWatch)</div>
+      <div class="p-2">Docker & Kubernetes</div>
+      <div class="p-2">Terraform & Ansible</div>
+      <div class="p-2">Git, GitLab CI/CD</div>
+      <div class="p-2">Prometheus & Grafana</div>
+      <div class="p-2">Linux & Shell Scripting</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-12 text-gray-500 text-sm text-center">
+    <p>© 2025 Faris Shabibi | Built with ❤️ using Tailwind CSS & AOS</p>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
