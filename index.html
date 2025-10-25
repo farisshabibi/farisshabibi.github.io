@@ -2,178 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faris Shabibi — DevOps & Cloud Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg1:#02112b;
-      --bg2:#063a7a;
-      --accent:#20c0ff;
-      --card:rgba(255,255,255,0.06);
-      --shadow:0 10px 30px rgba(3,10,34,0.6);
-    }
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:#e6eef8;line-height:1.5;}
-    a{text-decoration:none;color:inherit;}
-    .wrap{max-width:1100px;margin:0 auto;padding:32px;display:grid;gap:48px;}
-
-    /* HERO */
-    .hero{position:relative;padding:48px;border-radius:16px;background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.01));box-shadow:var(--shadow);overflow:hidden;}
-    .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(40px);opacity:0.5;}
-    .hero::before{width:300px;height:300px;background:linear-gradient(135deg, rgba(32,192,255,0.12), rgba(6,58,122,0.12));top:-100px;right:-120px;}
-    .hero::after{width:180px;height:180px;background:linear-gradient(135deg, rgba(32,192,255,0.06), rgba(6,58,122,0.06));bottom:-60px;left:-60px;}
-    .hero .name{font-size:40px;font-weight:700;color:var(--accent);}
-    .hero .role{margin-top:6px;font-size:16px;font-weight:600;color:#cfeeff;}
-    .hero .summary{margin-top:16px;font-size:16px;color:#d7eaf9;max-width:70ch;}
-    .type-wrap{margin-top:16px;font-size:16px;font-weight:600;color:#eafcff;display:flex;gap:10px;align-items:center;}
-    .type{white-space:nowrap;overflow:hidden;border-right:2px solid rgba(255,255,255,0.14);padding-right:6px;min-width:300px;}
-    .contact{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
-    .contact a.email{background:linear-gradient(90deg, rgba(32,192,255,0.12), rgba(6,58,122,0.08));padding:10px 16px;border-radius:10px;border:1px solid rgba(32,192,255,0.06);color:var(--accent);font-weight:700;transition:0.3s;}
-    .contact a.email:hover{transform:translateY(-3px);box-shadow:0 8px 16px rgba(32,192,255,0.2);}
-    .contact a.link{color:#dff6ff;font-weight:600;transition:0.3s;}
-    .contact a.link:hover{color:var(--accent);}
-
-    /* SECTIONS */
-    section{display:flex;flex-direction:column;gap:16px;}
-    h3{color:var(--accent);font-size:20px;font-weight:700;margin-bottom:12px;}
-
-    /* PROJECTS */
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
-    .project{padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);box-shadow:0 8px 20px rgba(2,8,30,0.55);transition:0.3s;cursor:default;display:flex;flex-direction:column;gap:12px;}
-    .project:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,8,30,0.6);}
-    .project h4{font-size:16px;color:#e9fbff;}
-    .project p{font-size:14px;color:#cfeeff;opacity:0.95;}
-    .project svg{width:24px;height:24px;fill:var(--accent);}
-
-    /* SKILLS */
-    .skills .skill{margin-bottom:18px;}
-    .skill .meta-line{display:flex;justify-content:space-between;font-size:14px;color:#d6eefc;margin-bottom:6px;}
-    .bar{height:14px;background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);}
-    .fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg, rgba(0,175,255,0.95), rgba(32,192,255,0.95));box-shadow:0 6px 18px rgba(2,112,170,0.18) inset;transition:width 1.8s cubic-bezier(.22,.9,.32,1);}
-    .skill-tags{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;}
-    .tag{font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.02);color:#cfeeff;transition:0.2s;position:relative;}
-    .tag:hover{background:var(--accent);color:#02112b;cursor:default;}
-    .tag:hover::after{content: attr(data-info);position:absolute;bottom:125%;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.8);color:#fff;padding:6px 10px;border-radius:6px;font-size:12px;white-space:nowrap;pointer-events:none;}
-
-    /* FOOTER */
-    .foot{text-align:center;color:#cfeeff;opacity:0.7;font-size:13px;padding:20px 0;margin-top:48px;}
-
-    /* RESPONSIVE */
-    @media(max-width:880px){.hero{align-items:flex-start}}
-  </style>
+  <title>Faris Shabibi | DevOps Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <!-- HERO -->
-    <header class="hero">
-      <div class="name">Faris Shabibi</div>
-      <div class="role">Platform Engineer — DevOps & Cloud</div>
-      <div class="summary">DevOps Engineer with 4 years of experience in AWS, Kubernetes, and automation. Specialized in CI/CD pipelines, containerized deployments, and production-scale observability.</div>
-      <div class="type-wrap">Primary: <div class="type" id="type"></div></div>
-      <div class="contact">
-        <a href="mailto:farisshabibi@gmail.com" class="email">✉️ Email</a>
-        <a href="https://linkedin.com/in/faris-shabibi-971ab521b" target="_blank" rel="noopener" class="link">🔗 LinkedIn</a>
+  <nav>
+    <div class="container nav-container">
+      <span class="logo">Faris Shabibi</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certs">Certifications</a></li>
+      </ul>
+    </div>
+  </nav>
+  <header>
+    <div class="container header-container">
+      <img src="avatar.jpg" alt="Profile Photo" class="avatar" onerror="this.style.display='none'">
+      <div>
+        <h1>Faris Shabibi</h1>
+        <h2>DevOps Engineer</h2>
+        <p>Building scalable, reliable, and cost-effective cloud infrastructure.</p>
       </div>
-    </header>
+    </div>
+  </header>
+  <main>
+    <section id="about" class="container">
+      <h3>About</h3>
+      <p>
+        DevOps Engineer with 4 years of experience in AWS, Kubernetes, and automation. Specialized in CI/CD pipeline development, infrastructure as code, and containerized deployments. Strong background in Big Data platforms, with expertise in monitoring, observability, and cost optimization for production-scale systems.
+      </p>
+    </section>
 
-    <!-- PROJECTS -->
-    <section class="projects-section">
-      <h3>Production Projects</h3>
-      <div class="projects">
-        <div class="project" tabindex="0">
-          <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm4 0h14v-2H7v2zM3 17h2v-2H3v2zm4 0h14v-2H7v2zM3 9h2V7H3v2zm4 0h14V7H7v2z"/></svg>
-          <h4>CI/CD Pipeline on AWS</h4>
-          <p>Terraform + GitLab CI to provision EKS, EMR, RDS with automated testing and secret management.</p>
+    <section id="skills" class="container">
+      <h3>Skills</h3>
+      <div class="skills-grid">
+        <div>
+          <h4>Cloud & Infrastructure</h4>
+          <p>AWS (EC2, S3, EKS, ECS, EMR, RDS, VPC, IAM, Lambda, CloudWatch, SES, SNS, MWAA)</p>
         </div>
-        <div class="project" tabindex="0">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 17h-2v-6h2v6zm0-8h-2V7h2v4z"/></svg>
-          <h4>Trino on EKS</h4>
-          <p>Kerberos-secured Trino cluster integrated with Superset dashboards for BI workflows.</p>
+        <div>
+          <h4>DevOps & CI/CD</h4>
+          <p>Git, GitLab CI/CD, Jenkins, ArgoCD, SonarQube, Trivy, Terraform, Ansible</p>
         </div>
-        <div class="project" tabindex="0">
-          <svg viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm-1-5h2v2h-2v-2zm0-10h2v8h-2V7z"/></svg>
-          <h4>Monitoring & Alerts</h4>
-          <p>Prometheus, Grafana, Datadog & CloudWatch unified stack with custom alerts and dashboards.</p>
+        <div>
+          <h4>Containers & Orchestration</h4>
+          <p>Docker, Docker Swarm, Kubernetes (EKS)</p>
+        </div>
+        <div>
+          <h4>Monitoring & Observability</h4>
+          <p>Datadog, Prometheus, Grafana, CloudWatch</p>
+        </div>
+        <div>
+          <h4>Scripting & Automation</h4>
+          <p>Bash (advanced), Python (intermediate), Ansible</p>
+        </div>
+        <div>
+          <h4>Big Data</h4>
+          <p>Hadoop, Spark, Kafka/MSK, NiFi, Hive, HBase, Trino, DynamoDB</p>
+        </div>
+        <div>
+          <h4>Other</h4>
+          <p>Linux (expert), Networking (VPC, DNS, Load Balancing), GitHub Copilot, AI productivity tools</p>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="skills-section skills">
-      <h3>Skills & Tooling</h3>
-
-      <div class="skill" data-fill="95">
-        <div class="meta-line"><span>Cloud & Infrastructure — AWS</span><span>95%</span></div>
-        <div class="bar"><div class="fill"></div></div>
-        <div class="skill-tags">
-          <span class="tag" data-info="EC2, S3, EKS, ECS, EMR, RDS, VPC, IAM, Lambda, CloudWatch, SES, SNS, MWAA">AWS</span>
-          <span class="tag" data-info="Virtual Networks, Subnets, VPC Peering">Networking</span>
-        </div>
+    <section id="experience" class="container">
+      <h3>Professional Experience</h3>
+      <div class="job">
+        <h4>Cognizant Technology Solutions <span class="role">Associate, DevOps Engineer</span> <span class="date">Aug 2022 – Present</span></h4>
+        <ul>
+          <li>Built and maintained GitLab CI/CD pipelines for AWS deployments (EKS, EMR, RDS) using Terraform, reducing provisioning time by 50%.</li>
+          <li>Deployed Apache Airflow on Docker Swarm for orchestrating data & ML workflows, improving job reliability by 35%.</li>
+          <li>Containerized and deployed Trino on EKS with Kerberos-secured Hive metastore; integrated with Superset for analytics.</li>
+          <li>Conducted Spark on EKS PoC, improving scalability and reducing cluster costs by 20%.</li>
+          <li>Automated log rotation and alerting with Ansible & Bash, cutting manual ops overhead by 40%.</li>
+          <li>Integrated SonarQube & Trivy into CI/CD pipelines for code and image vulnerability scanning.</li>
+          <li>Implemented AWS cost optimizations with S3 Gateway Endpoints, saving ~30% in data transfer costs.</li>
+        </ul>
       </div>
-
-      <div class="skill" data-fill="90">
-        <div class="meta-line"><span>DevOps & CI/CD</span><span>90%</span></div>
-        <div class="bar"><div class="fill"></div></div>
-        <div class="skill-tags">
-          <span class="tag" data-info="GitLab CI/CD Pipelines, Jenkins, ArgoCD">CI/CD</span>
-          <span class="tag" data-info="Terraform, Ansible">IaC</span>
-        </div>
+      <div class="job">
+        <h4>Airtel Africa Digital Labs (via Diksha Technologies) <span class="role">Software Engineer</span> <span class="date">Nov 2021 – Aug 2022</span></h4>
+        <ul>
+          <li>Administered Cloudera Hadoop and Kafka clusters for large-scale ETL pipelines.</li>
+          <li>Deployed and managed multiple Apache Airflow instances for batch and streaming workflows.</li>
+          <li>Enabled observability with Prometheus & Grafana dashboards; created SQL & shell-based custom alerts.</li>
+          <li>Deployed Apache NiFi for real-time ingestion pipelines.</li>
+          <li>Optimized Trino queries and enabled production-scale analytics with Trino Query Analyzer.</li>
+        </ul>
       </div>
-
-      <div class="skill" data-fill="92">
-        <div class="meta-line"><span>Containers & Orchestration</span><span>92%</span></div>
-        <div class="bar"><div class="fill"></div></div>
-        <div class="skill-tags">
-          <span class="tag" data-info="Docker, Docker Swarm, Kubernetes (EKS)">Containers</span>
-        </div>
-      </div>
-
-      <div class="skill" data-fill="88">
-        <div class="meta-line"><span>Monitoring & Observability</span><span>88%</span></div>
-        <div class="bar"><div class="fill"></div></div>
-        <div class="skill-tags">
-          <span class="tag" data-info="Prometheus, Grafana, Datadog, CloudWatch">Monitoring</span>
-        </div>
-      </div>
-
     </section>
 
-    <div class="foot">© <span id="year"></span> Faris Shabibi — Platform Engineer</div>
-  </div>
+    <section id="projects" class="container">
+      <h3>Projects</h3>
+      <ul>
+        <li><b>CI/CD Pipeline on AWS:</b> Automated provisioning of EKS, EMR, and RDS using Terraform and GitLab CI/CD; integrated SonarQube for code quality and Vault for secrets.</li>
+        <li><b>Trino on EKS:</b> Deployed secure Trino clusters with Hive metastore and Kerberos; integrated with Superset for dashboards.</li>
+        <li><b>Airflow on Docker Swarm:</b> Orchestrated ETL workflows with RDS, S3, and custom DAGs.</li>
+        <li><b>GitOps with ArgoCD:</b> Managed microservice deployments on EKS with GitOps and automated rollbacks.</li>
+        <li><b>Monitoring Stack:</b> Set up Prometheus, Grafana, Datadog, and CloudWatch for unified observability.</li>
+        <li><b>Security Pipeline:</b> Built CI/CD with Trivy + SonarQube to enforce security gates.</li>
+      </ul>
+    </section>
 
-  <script>
-    // Typing animation
-    (function(){
-      const el = document.getElementById('type');
-      const text = 'DevOps | Cloud Engineer | AWS | SRE | Terraform | CI/CD | Kubernetes';
-      let i = 0, forward = true;
-      function typeStep(){
-        if(forward){i++;el.textContent=text.slice(0,i);
-          if(i>=text.length){forward=false;setTimeout(typeStep,1600);return;}}
-        else{i=Math.max(22,i-1);el.textContent=text.slice(0,i)+'…';
-          if(i<=22) forward=true;}
-        setTimeout(typeStep,forward?28:18);}
-      typeStep();
-    })();
-
-    // Animate skill bars on scroll
-    (function(){
-      const skills = document.querySelectorAll('.skill');
-      const obs = new IntersectionObserver((entries, observer)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){
-            const fill = e.target.querySelector('.fill');
-            fill.style.width = e.target.getAttribute('data-fill')+'%';
-            observer.unobserve(e.target);
-          }
-        });
-      }, {threshold:0.28});
-      skills.forEach(s=>obs.observe(s));
-    })();
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <section id="certs" class="container">
+      <h3>Education & Certifications</h3>
+      <ul>
+        <li>Bachelor of Engineering (2019) – JNEC, Aurangabad</li>
+        <li>AWS Cloud Practitioner – Completed</li>
+        <li>AWS Solutions Architect Associate – Planned</li>
+        <li>Certified Kubernetes Administrator (CKA) – Planned</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <span>&copy; 2025 Faris Shabibi | Built with <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></span>
+    </div>
+  </footer>
 </body>
 </html>
