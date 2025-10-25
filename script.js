@@ -656,3 +656,220 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Mobile Optimization - Reduce Heavy Animations
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Optimized animations for mobile
+function initMobileOptimizedEffects() {
+    if (isMobile()) {
+        // Disable heavy animations on mobile
+        const heavyElements = document.querySelectorAll('.shape, .hero-background::before, .hero-background::after, section::before');
+        heavyElements.forEach(element => {
+            if (element) {
+                element.style.animation = 'none';
+                element.style.transform = 'none';
+            }
+        });
+        
+        // Remove floating elements on mobile
+        const floatingElements = document.querySelectorAll('.floating-element');
+        floatingElements.forEach(element => {
+            element.style.display = 'none';
+        });
+        
+        // Simplify parallax effects
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                // Simple parallax only
+                const rate = scrolled * -0.05;
+                section.style.transform = `translateY(${rate}px)`;
+            });
+        });
+        
+        return; // Skip heavy animations on mobile
+    }
+    
+    // Full animations for desktop
+    initAllSectionsDynamic();
+    initSectionColorCycling();
+    initSectionMouseInteraction();
+}
+
+// Mobile-friendly navigation
+function initMobileNavigation() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close menu when clicking on links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+}
+
+// Optimized scroll animations for mobile
+function initMobileScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    const animatedElements = document.querySelectorAll('.skill-category, .timeline-item, .project-card, .cert-card, .contact-item');
+    animatedElements.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+}
+
+// Mobile-optimized skill bars
+function initMobileSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    const skillObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillBar = entry.target;
+                const width = skillBar.getAttribute('data-width');
+                
+                // Faster animation on mobile
+                const duration = isMobile() ? 1000 : 2000;
+                
+                setTimeout(() => {
+                    skillBar.style.width = width + '%';
+                    skillBar.style.transition = `width ${duration}ms ease`;
+                }, 200);
+                
+                skillObserver.unobserve(skillBar);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    skillBars.forEach(bar => {
+        skillObserver.observe(bar);
+    });
+}
+
+// Mobile-optimized counter animations
+function initMobileCounterAnimations() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    const counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-target'));
+                
+                // Faster animation on mobile
+                const duration = isMobile() ? 1000 : 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+}
+
+// Initialize mobile-optimized effects
+document.addEventListener('DOMContentLoaded', function() {
+    initMobileOptimizedEffects();
+    initMobileNavigation();
+    initMobileScrollAnimations();
+    initMobileSkillBars();
+    initMobileCounterAnimations();
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    if (isMobile()) {
+        // Re-apply mobile optimizations
+        initMobileOptimizedEffects();
+    }
+});
+
+// Add mobile-specific CSS
+const mobileStyle = document.createElement('style');
+mobileStyle.textContent = `
+    @media (max-width: 768px) {
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    }
+`;
+document.head.appendChild(mobileStyle);
