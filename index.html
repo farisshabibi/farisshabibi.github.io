@@ -32,47 +32,120 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
+    a {
+      color: #22d3ee;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
 
-  <!-- Title Section -->
-  <section data-aos="fade-down" class="text-center mb-12">
-    <h1 class="text-5xl font-bold text-cyan-400 mb-3">Faris Shabibi</h1>
-    <p class="text-lg text-gray-300">DevOps | SRE | AWS | Kubernetes | Terraform</p>
-  </section>
+  <!-- Header -->
+  <header data-aos="fade-down" class="text-center mb-12">
+    <h1 class="text-5xl font-bold text-cyan-400 mb-2">Faris Shabibi</h1>
+    <p class="text-lg text-gray-300">🚀 DevOps Engineer | AWS | Kubernetes | Terraform | CI/CD</p>
+    <div class="mt-4 space-x-4 text-sm text-cyan-300">
+      <a href="https://github.com/yourgithubusername" target="_blank">GitHub</a> |
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a> |
+      <a href="mailto:your.email@example.com">Email</a>
+    </div>
+  </header>
 
-  <!-- Current Position -->
-  <section data-aos="fade-up" class="card p-6 w-full max-w-3xl mb-10 text-center">
-    <h2 class="text-2xl font-semibold text-cyan-300 mb-3">💼 Current Position</h2>
-    <p class="text-gray-200 leading-relaxed">
-      Associate DevOps Engineer at XYZ Company.  
-      Experienced in managing Kubernetes, AWS, CI/CD, and automation workflows.
+  <!-- Summary -->
+  <section data-aos="fade-up" class="card p-6 w-full max-w-4xl mb-10">
+    <h2 class="text-2xl font-semibold text-cyan-300 mb-4 text-center">👨‍💻 Summary</h2>
+    <p class="text-gray-200 leading-relaxed text-center">
+      DevOps Engineer with 4 years of experience in AWS, Kubernetes, and automation.
+      Specialized in building CI/CD pipelines, infrastructure as code, and containerized deployments.
+      Strong background in Big Data platforms, with expertise in monitoring, observability,
+      and cost optimization for production-scale systems.
     </p>
   </section>
 
-  <!-- Projects Completed -->
-  <section data-aos="fade-right" class="card p-6 w-full max-w-3xl mb-10">
-    <h2 class="text-2xl font-semibold text-cyan-300 mb-4 text-center">🚀 Projects in Production</h2>
+  <!-- Skills -->
+  <section data-aos="fade-right" class="card p-6 w-full max-w-4xl mb-10">
+    <h2 class="text-2xl font-semibold text-cyan-300 mb-4 text-center">🧠 Skills</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-200">
+      <div>
+        <p class="font-semibold text-cyan-200 mb-1">☁️ Cloud & Infrastructure</p>
+        <p>AWS (EC2, S3, EKS, ECS, EMR, RDS, VPC, IAM, Lambda, CloudWatch, SES, SNS, MWAA)</p>
+      </div>
+      <div>
+        <p class="font-semibold text-cyan-200 mb-1">⚙️ DevOps & CI/CD</p>
+        <p>Git, GitLab CI/CD, Jenkins, ArgoCD, SonarQube, Trivy, Terraform, Ansible</p>
+      </div>
+      <div>
+        <p class="font-semibold text-cyan-200 mb-1">🐳 Containers & Orchestration</p>
+        <p>Docker, Docker Swarm, Kubernetes (EKS)</p>
+      </div>
+      <div>
+        <p class="font-semibold text-cyan-200 mb-1">📊 Monitoring & Observability</p>
+        <p>Datadog, Prometheus, Grafana, CloudWatch</p>
+      </div>
+      <div>
+        <p class="font-semibold text-cyan-200 mb-1">💻 Scripting & Automation</p>
+        <p>Bash (advanced), Python (intermediate), Ansible</p>
+      </div>
+      <div>
+        <p class="font-semibold text-cyan-200 mb-1">🧩 Big Data & Other</p>
+        <p>Hadoop, Spark, Kafka/MSK, NiFi, Hive, HBase, Trino, Linux (expert), Networking, AI Tools</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section data-aos="fade-left" class="card p-6 w-full max-w-4xl mb-10">
+    <h2 class="text-2xl font-semibold text-cyan-300 mb-4 text-center">💼 Professional Experience</h2>
+    
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold text-cyan-200">Cognizant Technology Solutions — Associate, DevOps Engineer</h3>
+      <p class="text-sm text-gray-400 mb-2">(Aug 2022 – Present)</p>
+      <ul class="list-disc list-inside text-gray-200 space-y-1">
+        <li>Built GitLab CI/CD pipelines for AWS deployments (EKS, EMR, RDS) using Terraform — reduced provisioning time by <b>50%</b>.</li>
+        <li>Deployed Airflow on Docker Swarm for data & ML workflows — improved reliability by <b>35%</b>.</li>
+        <li>Containerized Trino on EKS with Kerberos-secured Hive metastore, integrated with Superset for analytics.</li>
+        <li>Led Spark on EKS PoC — improved scalability, reduced cluster cost by <b>20%</b>.</li>
+        <li>Integrated SonarQube & Trivy for code + image vulnerability scanning in CI/CD.</li>
+        <li>Optimized AWS data transfer costs by <b>30%</b> via S3 Gateway Endpoints.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-semibold text-cyan-200">Airtel Africa Digital Labs — Software Engineer</h3>
+      <p class="text-sm text-gray-400 mb-2">(Nov 2021 – Aug 2022)</p>
+      <ul class="list-disc list-inside text-gray-200 space-y-1">
+        <li>Administered Cloudera Hadoop and Kafka clusters for enterprise ETL pipelines.</li>
+        <li>Deployed and managed Airflow instances for streaming workflows.</li>
+        <li>Enabled observability with Prometheus + Grafana dashboards and custom SQL-based alerts.</li>
+        <li>Optimized Trino queries for faster analytics and high availability.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section data-aos="zoom-in" class="card p-6 w-full max-w-4xl mb-10">
+    <h2 class="text-2xl font-semibold text-cyan-300 mb-4 text-center">🚀 Projects</h2>
     <ul class="list-disc list-inside text-gray-200 space-y-2">
-      <li>Deployed Airflow on EKS using Terraform, GitLab CI/CD & ArgoCD</li>
-      <li>Automated EMR Cluster provisioning and monitoring using Shell & AWS SDK</li>
-      <li>Implemented centralized Prometheus-Grafana monitoring setup across environments</li>
-      <li>Created GitLab CI/CD pipeline for multi-environment application deployment</li>
+      <li><b>CI/CD Pipeline on AWS</b> — Automated provisioning of EKS, EMR, and RDS with Terraform and GitLab CI/CD; integrated SonarQube and Vault.</li>
+      <li><b>Trino on EKS</b> — Deployed secure Trino clusters integrated with Hive metastore and Superset dashboards.</li>
+      <li><b>Airflow on Docker Swarm</b> — Managed ETL pipelines for data workflows using RDS and S3.</li>
+      <li><b>GitOps with ArgoCD</b> — Automated microservice deployments and rollbacks on EKS.</li>
+      <li><b>Monitoring Stack</b> — Deployed Prometheus, Grafana, Datadog, and CloudWatch for unified observability.</li>
+      <li><b>Security Pipeline</b> — Integrated Trivy + SonarQube to enforce code and container security gates.</li>
     </ul>
   </section>
 
-  <!-- Skill Set -->
-  <section data-aos="fade-left" class="card p-6 w-full max-w-3xl">
-    <h2 class="text-2xl font-semibold text-cyan-300 mb-4 text-center">🧠 Skill Set</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-200">
-      <div class="p-2">AWS (EC2, S3, EKS, EMR, CloudWatch)</div>
-      <div class="p-2">Docker & Kubernetes</div>
-      <div class="p-2">Terraform & Ansible</div>
-      <div class="p-2">Git, GitLab CI/CD</div>
-      <div class="p-2">Prometheus & Grafana</div>
-      <div class="p-2">Linux & Shell Scripting</div>
-    </div>
+  <!-- Education & Certifications -->
+  <section data-aos="fade-up" class="card p-6 w-full max-w-4xl">
+    <h2 class="text-2xl font-semibold text-cyan-300 mb-4 text-center">🎓 Education & Certifications</h2>
+    <ul class="list-disc list-inside text-gray-200 space-y-2">
+      <li><b>Bachelor of Engineering</b> – JNEC, Aurangabad (2019)</li>
+      <li><b>AWS Cloud Practitioner</b> – Completed</li>
+      <li><b>AWS Solutions Architect Associate</b> – Planned</li>
+      <li><b>Certified Kubernetes Administrator (CKA)</b> – Planned</li>
+    </ul>
   </section>
 
   <!-- Footer -->
