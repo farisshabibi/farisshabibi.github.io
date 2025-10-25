@@ -1023,3 +1023,87 @@ section {
         font-size: 1.2rem !important;
     }
 }
+
+/* Direct Contact Methods */
+.contact-direct {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.contact-method:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+    background: white;
+}
+
+.contact-method i {
+    font-size: 2rem;
+    color: #667eea;
+    width: 50px;
+    text-align: center;
+}
+
+.contact-method h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.contact-method a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-method a:hover {
+    color: #5a67d8;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for contact methods */
+@media (max-width: 768px) {
+    .contact-methods {
+        gap: 1.5rem;
+    }
+    
+    .contact-method {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .contact-method i {
+        font-size: 1.5rem;
+        width: 40px;
+    }
+    
+    .contact-method h4 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-method a {
+        font-size: 0.9rem;
+    }
+}
